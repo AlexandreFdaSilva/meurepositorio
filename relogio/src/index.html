@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Relógio</title>
+ <meta charset="utf-8">
+ <center>
+ <h1>Relógio</h1>
+</center>
+ <script type="text/javascript">
+  function relogio() {
+   var data = new Date(); // criando varial data
+   var horas = data.getHours(); //Retorna a hora local
+   var minutos = data.getMinutes(); //Retorna os minutos locais
+   var segundos = data.getSeconds(); //Retorna os segundos locais
+
+//concatenar as horas
+   if (horas < 10) { 
+    horas = "0"+horas;
+   }
+   if (minutos < 10) {
+    minutos = "0"+minutos;
+   }
+   if (segundos < 10) {
+    segundos = "0"+segundos;
+   }
+
+   document.getElementById("relogio").innerHTML=horas+":"+minutos+":"+segundos;
+  }
+  window.setInterval("relogio()",1000); // ficar atualizando a cada 1 segundo
+ </script>
+ <style type="text/css">
+ h1 { 
+   font:bold 28pt arial;
+   display: block;
+   margin: 50px auto;
+   padding: 10px;
+   background-color: rgb(12, 133, 170);
+   width: 210px;
+   border-radius: 7px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+}
+  #relogio {
+   font:bold 28pt arial;
+   display: block;
+   margin: 150px auto;
+   padding: 30px;
+   background-color: rgb(12, 133, 170);
+   width: 210px;
+   border-radius: 7px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+
+  }
+  a{
+   text-decoration: none;
+   color: #fff;
+   font-family: arial;
+   border-radius: 3px;
+   display: block;
+   width: 100px;
+   margin: -80px auto;
+   box-shadow: 0px 0px 3px rgba(0,0,0, .3);
+   padding: 5px 10px 5px 10px;
+   background-color: rgb(12, 133, 170);
+  }
+  a:hover{
+   text-decoration: none;
+   color: rgb(255, 255, 255);
+   font-family: arial;
+   border-radius: 3px;
+   display: block;
+   width: 100px;
+   margin: -80px auto;
+   box-shadow: 0px 0px 3px rgba(0,0,0, .3);
+   padding: 5px 10px 5px 10px;
+   background-color: rgb(12, 133, 170);
+  }
+ </style>
+</head>
+<body onload="relogio();">
+<div id="relogio">
+</div>
+<center>
+<a href="http://localhost:8100/">Atualizar</a>
+</center>
+</body>
+</html>
